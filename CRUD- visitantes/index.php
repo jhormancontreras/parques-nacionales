@@ -51,7 +51,7 @@ include("conexion.php");
 			<form class="form-inline" method="get">
 				<div class="form-group">
 					<select name="filter" class="form-control" onchange="form.submit()">
-						<option value="0">Seleccionar</option>
+						<option value="0">Filtrar por Area</option>
 						<option value="todos">Mostrar todos</option>
 						<?php $filter = (isset($_GET['filter']) ? strtolower($_GET['filter']) : NULL);  ?>
 						<?php

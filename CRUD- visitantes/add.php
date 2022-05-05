@@ -37,7 +37,7 @@ Email	 	 : info@obedalvarado.pw
 	</nav>
 	<div class="container">
 		<div class="content">
-			<h2>Registro de los visitantes &raquo; Agregar </h2>
+			<h2>Registro de Datos de los Visitantes &raquo; Agregar Datos </h2>
 			<hr />
 
 			<?php
