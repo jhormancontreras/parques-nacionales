@@ -37,14 +37,14 @@ Email	 	 : info@obedalvarado.pw
 	</nav>
 	<div class="container">
 		<div class="content">
-			<h2> Areas Protegidas &raquo; Agregar Area</h2>
+			<h2> Registro de encuestas &raquo; Agregar</h2>
 			<hr />
 
 			<?php
 			if(isset($_POST['add'])){
-				//$ID_area     = mysqli_real_escape_string($con,(strip_tags($_POST["ID_area"],ENT_QUOTES)));//Escanpando caracteres 
-				$nombre		     = mysqli_real_escape_string($con,(strip_tags($_POST["nombre"],ENT_QUOTES)));//Escanpando caracteres 
-				//$ocupacion	     = mysqli_real_escape_string($con,(strip_tags($_POST["ocupacion"],ENT_QUOTES)));//Escanpando caracteres 
+				$ID_area     = mysqli_real_escape_string($con,(strip_tags($_POST["ID_area"],ENT_QUOTES)));//Escanpando caracteres 
+				$fecha		     = mysqli_real_escape_string($con,(strip_tags($_POST["fecha"],ENT_QUOTES)));//Escanpando caracteres 
+				$sector	     = mysqli_real_escape_string($con,(strip_tags($_POST["ocupacion"],ENT_QUOTES)));//Escanpando caracteres 
 				//$Nacionalidad	 = mysqli_real_escape_string($con,(strip_tags($_POST["Nacionalidad"],ENT_QUOTES)));//Escanpando caracteres 
 				//$cantidad	     = mysqli_real_escape_string($con,(strip_tags($_POST["cantidad"],ENT_QUOTES)));//Escanpando caracteres 
 				//$mes      	     = mysqli_real_escape_string($con,(strip_tags($_POST["mes"],ENT_QUOTES)));//Escanpando caracteres 
@@ -53,13 +53,13 @@ Email	 	 : info@obedalvarado.pw
 				
 			
 
-				$cek = mysqli_query($con, "SELECT * FROM areas_protegidas WHERE ID_area='$ID_area'");
+				$cek = mysqli_query($con, "SELECT * FROM encuestas WHERE ID_encuesta='$ID_encuesta'");
 				if(mysqli_num_rows($cek) == 0){
-						$insert = mysqli_query($con, "INSERT INTO areas_protegidas(nombre)
-															VALUES('$nombre')") or die(mysqli_error());
+						$insert = mysqli_query($con, "INSERT INTO encuestas(fecha,sector,ID_area)
+															VALUES('$fecha','$sector','$ID_area')") or die(mysqli_error());
 						if($insert){
 							echo '<div class="alert alert-success alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Bien hecho! Los datos han sido guardados con éxito.</div>';
-							header("Location: index.php");
+							header("Location: add.php");
 						}else{
 							echo '<div class="alert alert-danger alert-dismissable"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>Error. No se pudo guardar los datos !</div>';
 						}
@@ -73,12 +73,41 @@ Email	 	 : info@obedalvarado.pw
 			?>
 
 			<form class="form-horizontal" action="" method="post">
+
+			<div class="form-group">
+				<label class="col-sm-3 control-label">Area</label>
+				<div class="col-sm-3">
+					<select name="ID_area" class="form-control">
+						<option value="">Seleccionar Area</option>
+			
+						<?php
+							$sql = mysqli_query($con, "SELECT * FROM areas_protegidas");
+							while($fila=$sql->fetch_array()){
+								echo " <option value = '".$fila['ID_area']."'>".$fila['nombre']. "</option>";
+							}
+						?>
+							
+					</select>
+				</div>
+			</div>
+			
+			<div class="form-group">
 				<div class="form-group">
-					<label class="col-sm-3 control-label">Nombre</label>
+					<label class="col-sm-3 control-label">fecha</label>
 					<div class="col-sm-2">
-						<input type="text" name="nombre" class="form-control" placeholder="Area" required>
+						<input type="date" name="fecha" class="form-control" placeholder="fecha" required>
 					</div>
 				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="form-group">
+					<label class="col-sm-3 control-label">Sector</label>
+					<div class="col-sm-2">
+						<input type="text" name="sector" class="form-control" placeholder="sector" required>
+					</div>
+				</div>
+			</div>
 				
 				<div class="form-group">
 					<label class="col-sm-3 control-label">&nbsp;</label>

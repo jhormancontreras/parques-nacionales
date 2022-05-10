@@ -27,7 +27,7 @@ include("conexion.php");
 	</nav>
 	<div class="container">
 		<div class="content">
-			<h2>Lista de datos Encuestas</h2>
+			<h2>Lista de Encuestas Registradas</h2>
 			<hr />
 
 			<?php
@@ -76,12 +76,13 @@ include("conexion.php");
 				<tr>
                     <th>ID</th>
 					<th>Area</th>
-					<th>Mes</th>
-					<th>Tipo de Persona</th>
-                    <th>Procedencia</th>
-                    <th>año</th>
-					<th>cantidad</th>
+					<th>Fecha</th>
+					<th>Sector</th>
 					<th>Acciones</th>
+                   <!-- <th>Procedencia</th>
+                    <th>año</th>
+					<th>cantidad</th>-->
+					
 					
 				</tr>
 			<?php
@@ -106,9 +107,7 @@ include("conexion.php");
 							<td><?php echo $row['nombre'] ?></td>
 							<td><?php echo $row['mes'] ?></td>
 							<td><?php echo $row['tipo_persona'] ?></td>
-							<td><?php echo $row['Nacionalidad'] ?></td>
-							<td><?php echo $row['año'] ?></td>
-							<td><?php echo $row['cantidad'] ?></td>
+							
 									
 							                        
 							<td>
