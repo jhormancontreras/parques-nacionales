@@ -1,7 +1,7 @@
 	<div class="container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-					<span class="sr-only">Toggle navigation</span>
+					<span class="sr-only">Menu</span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
 					<span class="icon-bar"></span>
@@ -10,10 +10,10 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav ">
-				<li><a href="../principal/index.php">Inicio</a></li>	
-				<li class="active"><a href="index.php">Lista de visitantes</a></li>
-					<!--<li><a href="add2.php">Agregar Areas</a></li>-->
-					<li><a href="add.php">Agregar Registro De Visitantes</a></li>
+				
+				<li class="active"><a href="bienvenidos.php">Inicio</a></li>
+					
+				<!--<li><a href="add.php">Registrar datos de los Visitantes</a></li>-->
 				</ul>
 			</div><!--/.nav-collapse -->
 	</div>

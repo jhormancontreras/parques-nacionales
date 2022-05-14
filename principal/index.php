@@ -25,7 +25,7 @@
             </div>
         </nav>
         <div class="nombre">
-        <center><h1>Registro de Datos SSNA</h1></center>
+        <center><h1>Registro de Datos </h1></center>
         </div>
         <!-- Masthead-->
        
@@ -37,7 +37,7 @@
                     <div class="col-lg-6">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                            <div class="features-icons-icon d-flex"><img src="/principal/logo_visitantes.png" alt=""  class="imagen1" ></div>
-                            <h3>Registro estadistico de Visitantes</h3>
+                            <h3>Registro Datos de los Visitantes</h3>
                             <p class="lead mb-0">-------------------</p>
                             <br><a href="../CRUD- visitantes/index.php" class="btn btn-primary">Ingresar</a>
                     

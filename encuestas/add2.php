@@ -81,9 +81,9 @@ Email	 	 : info@obedalvarado.pw
 						<option value="">Seleccionar Area</option>
 			
 						<?php
-							$sql = mysqli_query($con, "SELECT * FROM areas_protegidas");
+							$sql = mysqli_query($con, "SELECT * FROM area_protegida");
 							while($fila=$sql->fetch_array()){
-								echo " <option value = '".$fila['ID_area']."'>".$fila['nombre']. "</option>";
+								echo " <option value = '".$fila['ID_area']."'>".$fila['Nombre']. "</option>";
 							}
 						?>
 							
@@ -91,14 +91,7 @@ Email	 	 : info@obedalvarado.pw
 				</div>
 			</div>
 			
-			<div class="form-group">
-				<div class="form-group">
-					<label class="col-sm-3 control-label">fecha</label>
-					<div class="col-sm-2">
-						<input type="date" name="fecha" class="form-control" placeholder="fecha" required>
-					</div>
-				</div>
-			</div>
+			
 
 			<div class="form-group">
 				<div class="form-group">

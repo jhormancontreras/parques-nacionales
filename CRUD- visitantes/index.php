@@ -56,7 +56,7 @@ include("conexion.php");
 						<?php $filter = (isset($_GET['filter']) ? strtolower($_GET['filter']) : NULL);  ?>
 						<?php
 							
-							$sql = mysqli_query($con, "SELECT * FROM areas_protegidas");
+							$sql = mysqli_query($con, "SELECT * FROM area_protegida");
 							while($fila=$sql->fetch_array()){
 
 							echo " <option value = '".$fila['ID_area']."'>".$fila['nombre']. "</option>";
@@ -87,13 +87,13 @@ include("conexion.php");
 			<?php
 				if($filter){
 					if($filter=="todos"){
-						$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN areas_protegidas a ON r.ID_area= a.ID_area ORDER BY a.ID_area ASC");
+						$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN area_protegida a ON r.ID_area= a.ID_area ORDER BY r.mes ASC");
 					} else{
-					$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN areas_protegidas a ON r.ID_area= a.ID_area WHERE a.ID_area='$filter' ORDER BY a.ID_area ASC");
+					$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN area_protegida a ON r.ID_area= a.ID_area WHERE a.ID_area='$filter' ORDER BY a.ID_area ASC");
 					}
 				}
 				else{
-					$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN areas_protegidas a ON r.ID_area= a.ID_area ORDER BY a.ID_area ASC");
+					$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN area_protegida a ON r.ID_area= a.ID_area ORDER BY r.mes ASC");
 				}
 				if(mysqli_num_rows($sql) == 0){
 					echo '<tr><td colspan="8">No hay datos.</td></tr>';
