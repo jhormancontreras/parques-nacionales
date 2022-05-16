@@ -10,8 +10,6 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav ">
-				<li><a href="../principal/index.php">Inicio</a></li>	
-				<li class="active"><a href="index.php">Lista de Encuestas Registradas</a></li>
 					<li><a href="add2.php">Agregar registro encuesta</a></li>
 					<li><a href="add.php">Agregar Respuesta</a></li>
 				</ul>

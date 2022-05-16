@@ -76,12 +76,9 @@ include("conexion.php");
 				<tr>
                     <th>ID</th>
 					<th>Area</th>
-					<th>Mes</th>
-					<th>Tipo de Persona</th>
-                    <th>Procedencia</th>
-                    <th>año</th>
-					<th>cantidad</th>
-					<th>Acciones</th>
+					<th>Fecha</th>
+					<th>Sector</th>
+                    <th>Acciones</th>
 					
 				</tr>
 			<?php

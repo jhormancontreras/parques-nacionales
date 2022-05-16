@@ -10,10 +10,10 @@
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav ">
-				<li><a href="../principal/index.php">Inicio</a></li>	
+				<li><a href="../../index.php">Salir</a></li>	
 				<li class="active"><a href="index.php">Lista de visitantes</a></li>
 					<!--<li><a href="add2.php">Agregar Areas</a></li>-->
-					<li><a href="add.php">Agregar Registro De Visitantes</a></li>
+					<li><a href="index2.php">lista de datos de encuestas</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
 	</div>

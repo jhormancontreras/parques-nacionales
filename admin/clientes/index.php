@@ -8,7 +8,7 @@ include("conexion.php");
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Registro Encuestas</title>
+	<title>Registro visitantes</title>
 
 	<!-- Bootstrap -->
 	<link href="css/bootstrap.min.css" rel="stylesheet">
@@ -27,7 +27,7 @@ include("conexion.php");
 	</nav>
 	<div class="container">
 		<div class="content">
-			<h2>Lista de Encuestas Registradas</h2>
+			<h2>Lista de datos visitantes</h2>
 			<hr />
 
 			<?php
@@ -51,15 +51,15 @@ include("conexion.php");
 			<form class="form-inline" method="get">
 				<div class="form-group">
 					<select name="filter" class="form-control" onchange="form.submit()">
-						<option value="0">Seleccionar</option>
+						<option value="0">Filtrar por Area</option>
 						<option value="todos">Mostrar todos</option>
 						<?php $filter = (isset($_GET['filter']) ? strtolower($_GET['filter']) : NULL);  ?>
 						<?php
 							
-							$sql = mysqli_query($con, "SELECT * FROM areas_protegidas");
+							$sql = mysqli_query($con, "SELECT * FROM respuesta_visitante");
 							while($fila=$sql->fetch_array()){
 
-							echo " <option value = '".$fila['ID_area']."'>".$fila['nombre']. "</option>";
+							echo " <option value = '".$fila['ID_visitante']."'>".$fila['nombre']. "</option>";
 
 							}
 
@@ -76,26 +76,22 @@ include("conexion.php");
 				<tr>
                     <th>ID</th>
 					<th>Area</th>
-					<th>Fecha</th>
-					<th>Sector</th>
-					<th>Acciones</th>
-                   <!-- <th>Procedencia</th>
-                    <th>año</th>
-					<th>cantidad</th>-->
-					
+					<th>Nacionalidad</th>
+					<th>Tipo de Persona</th>
+                    <th>Acciones</th>
 					
 				</tr>
 			<?php
 				if($filter){
 					if($filter=="todos"){
-						$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN areas_protegidas a ON r.ID_area= a.ID_area ORDER BY a.ID_area ASC");
+						$sql = mysqli_query($con, "SELECT * FROM respuesta_visitante  ORDER BY ID_visitante ASC");
 					} else{
-					$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN areas_protegidas a ON r.ID_area= a.ID_area WHERE a.ID_area='$filter' ORDER BY a.ID_area ASC");
+					$sql = mysqli_query($con, "SELECT * FROM respuesta_visitante  WHERE nombre='$filter' ORDER BY ID_visitante ASC");
 					}
 				}
-				else{
-					$sql = mysqli_query($con, "SELECT * FROM registro_datos_visitantes r INNER JOIN areas_protegidas a ON r.ID_area= a.ID_area ORDER BY a.ID_area ASC");
-				}
+				/*else{
+					//$sql = mysqli_query($con, "SELECT * FROM respuesta_visitante r  ON r.ID_area= a.ID_area ORDER BY r.mes ASC");
+				}*/
 				if(mysqli_num_rows($sql) == 0){
 					echo '<tr><td colspan="8">No hay datos.</td></tr>';
 				}else{
@@ -103,17 +99,17 @@ include("conexion.php");
 					while($row = mysqli_fetch_array($sql)){
 						?>
 						<tr>
-							<td><?php echo $row['ID_registro'] ?></td>
+							<td><?php echo $row['ID_visitante'] ?></td>
 							<td><?php echo $row['nombre'] ?></td>
-							<td><?php echo $row['mes'] ?></td>
-							<td><?php echo $row['tipo_persona'] ?></td>
+							<td><?php echo $row['ID_pregunta'] ?></td>
+							<td><?php echo $row['ID_respuesta'] ?></td>
 							
 									
 							                        
 							<td>
 
-								<a href="edit.php? nik= <?php echo $row['ID_registro'] ?>" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
-								<a href="index.php?aksi=delete&nik=<?php echo $row['ID_registro'] ?>" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['ID_area'].'?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
+								<a href="edit.php? nik= <?php echo $row['ID_visitante'] ?>" title="Editar datos" class="btn btn-primary btn-sm"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+								<a href="index.php?aksi=delete&nik=<?php echo $row['ID_visitante'] ?>" title="Eliminar" onclick="return confirm(\'Esta seguro de borrar los datos '.$row['ID_area'].'?\')" class="btn btn-danger btn-sm"><span class="glyphicon glyphicon-trash" aria-hidden="true"></span></a>
 							</td>
 						</tr>
 					<?php

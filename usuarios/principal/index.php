@@ -13,7 +13,7 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
+        <link href="../../css/styles.css" rel="stylesheet" />
     </head>
     <body class="cuerpo">
         <!-- Navigation-->
@@ -25,7 +25,7 @@
             </div>
         </nav>
         <div class="nombre">
-        <center><h1>Registro de Datos </h1></center>
+        <center><h1>Registro de Datos Usuario</h1></center>
         </div>
         <!-- Masthead-->
        
@@ -37,9 +37,9 @@
                     <div class="col-lg-6">
                         <div class="features-icons-item mx-auto mb-5 mb-lg-0 mb-lg-3">
                            <div class="features-icons-icon d-flex"><img src="/principal/logo_visitantes.png" alt=""  class="imagen1" ></div>
-                            <h3>Registro Datos de los Visitantes</h3>
-                            <p class="lead mb-0">-------------------</p>
-                            <br><a href="../CRUD- visitantes/index.php" class="btn btn-primary">Ingresar</a>
+                            <h3>Registrar visitantes</h3>
+                            <p class="lead mb-0">ingresa para hacer el registro de un visitantes</p>
+                            <br><a href="../usuario/add.php" class="btn btn-primary">Ingresar</a>
                     
                         </div>
                         
@@ -48,8 +48,8 @@
                     <div class="col-lg-6">
                         <div class="features-icons-item mx-auto mb-0 mb-lg-3">
                             <div class="features-icons-icon d-flex" ><img src="/principal/logo encuestas.png" alt="" class="imagen1" ></div>
-                            <h3>Registro de Datos Encuestas</h3>
-                            <p class="lead mb-0">---------------</p>
+                            <h3>Realizar Encuestas</h3>
+                            <p class="lead mb-0">ingresa para realizar una encuesta de satisfacción</p>
                             <br><a href="../encuestas/index.php" class="btn btn-primary">Ingresar</a>
                         </div>
                         
